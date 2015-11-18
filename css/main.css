@@ -1,6 +1,6 @@
 header {min-height: 100px;}
 section {min-height: 50px;}
-footer {min-height: 50px; font-size: 14px;}
+footer {min-height: 50px; font-size: 14px; background-color: #6CD9E4;}
 
 .m_container {width: 100%; min-width: 970px; min-height: 50px; margin-left: auto; margin-right: auto; padding: 0 10px; position: relative; border: 0px solid red;}
 
@@ -26,6 +26,7 @@ footer {min-height: 50px; font-size: 14px;}
 
 .height_120 {height: 120px;}
 .height_70 {height: 70px;}
+.height_35 {height: 35px;}
 
 .txt_center {text-align: center;}
 
@@ -47,7 +48,7 @@ footer {min-height: 50px; font-size: 14px;}
 .navbar_1 {list-style-type: none; margin-left: 0; margin-right: 0;}
 .navbar_1 li {display: inline; padding: 0 20px;}
 .navbar_1 li a {color: #585757; text-decoration: none;}
-.navbar_1 li a:hover {color: #0D58DA;}
+.navbar_1 li a:hover {color: #0066FF;}
 
 .brand {padding-left: 5px; padding-right: 5px; margin-left: auto; margin-right: auto; text-align: center;}
 .brand .img_content {display: inline-block; width: 16%;}
@@ -56,6 +57,8 @@ img.resize-m-height {width: auto; height: 100px;  margin-right: 25px;}
 img.resize-m-auto {width: auto; height: auto;  margin-right: 25px;}
 
 #home_bg {background: url(/images/slider-bg.png)0 100% repeat-x;}
+
+section.mini-content {border: 1px solid #F4F4F4;}
 
 footer .m_container {text-align: center;}
 footer .box {display: inline-block; vertical-align: top; text-align: left; padding-right: 40px; padding-bottom: 15px;}
