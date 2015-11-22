@@ -27,4 +27,24 @@
         };
     });
     
+    app.directive('service', function(){
+        return {
+            retrict: 'E',
+            templateUrl: '/content/service.html'
+        }
+    });
+    
+    app.directive('sales', function(){
+        return {
+            retrict: 'E',
+            templateUrl: '/content/sales.html'
+        }
+    });
+    
+    app.directive('contactus', function(){
+        return {
+            retrict: 'E',
+            templateUrl: '/content/contactus.html'
+        }
+    });
 })();

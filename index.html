@@ -1,7 +1,11 @@
 <html ng-app="forklift">
     <head>
-        <script src="js/angular.min.js"></script>
-        <script src="js/main.js"></script>
+        <title>Forklift Malaysia | Forklift Rental |Forklift Sales | Pallet Trucks | Reach Trucks</title>
+        <meta name="keywords" content="forklift Malaysia,forklift rental,forklift repair,forklift sale,forklift for rent,forklift sales,rent forklift,forklift battery,forklift price,forklift rental service,forklift malaysia, malaysia forklift, forklift selangor, sewa forklift, beli forklift, forklift,forklift rental malaysia,rent forklift,forklift malaysia, battery, electric, reach trucks, lift truck, hand pallet trucks,forklift supplier,forklift rental malaysia,rent a forklift,toyota forklift malaysia,forklift supplier malaysia,forklift price malaysia,,rental forklift malaysia，forklift rental price malaysia，forklift in malaysia，forklift company in malaysia，used forklift malaysia,forklift price,forklift price malaysia, forklift rental in shah alam, forklift rental in subang jaya, forklift rental in petaling jaya, forklift rental in Kajang,forklift rental in Klang, forklift rental in Selayang,forklift rental in Sepang,forklift rental in rawang,forklift rental in kajang,forklift rental in serdang,forklift rental in putrajaya,forklift rental in cyberjaya,forklift rental in ampang,forklift rental in selayang,forklift rental in gombak,forklift rental in glenmarie,forklift rental in kepong,forklift rental in kuala lumpur,  forklift rental in puchong, forklift rental in bangi, forklift rental in damansara, forklift rental in cheras">
+        <meta name="description" content="TWS Marketing - We specialized in Sales, Rental &amp; Repair all ranges of Diesel Forklift, Petrol/LPG Forklift, Battery Forklift, Pallet Trucks, Reach Trucks, Stacker &amp; etc in Malaysia. Visit now!">
+
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
     </head>
@@ -27,13 +31,13 @@
                                 <a href ng-click="main.setMenu('aboutus')">About Us</a>
                             </li>
                             <li>
-                                <a href>Service/Repair</a>
+                                <a href ng-click="main.setMenu('service')">Service/Repair</a>
                             </li>
                             <li>
-                                <a href>Sales/Rental</a>
+                                <a href ng-click="main.setMenu('sales')">Sales/Rental</a>
                             </li>
                             <li>
-                                <a href>Contact Us</a>
+                                <a href ng-click="main.setMenu('contactus')">Contact Us</a>
                             </li>
                         </ul>
                     </div>
@@ -44,6 +48,9 @@
         
         <home ng-show="main.isSet('home')"></home>
         <about-us ng-show="main.isSet('aboutus')"></about-us>
+        <service ng-show="main.isSet('service')"></service>
+        <sales ng-show="main.isSet('sales')"></sales>
+        <contactus ng-show="main.isSet('contactus')"></contactus>
         
         <footer>
             <div class="height_35"></div>
