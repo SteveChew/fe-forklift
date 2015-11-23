@@ -8,53 +8,65 @@
                         <legend>Please send us a message</legend>
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                                <input type="text" class="form-control" id="custCompanyName" placeholder="Your Company Name">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> Checkbox
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="textArea" class="col-lg-2 control-label">Textarea</label>
-                            <div class="col-lg-12">
-                                <textarea class="form-control" rows="3" id="textArea"></textarea>
-                                <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+                                <input type="text" class="form-control" id="custName" placeholder="Your Name">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked=""> Option one is this
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Option two can be something else
-                                    </label>
-                                </div>
+                                <input type="text" class="form-control" id="custContactNumber" placeholder="Your Contact Number">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <select class="form-control" id="select">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                <input type="text" class="form-control" id="custEmail" placeholder="Your Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <select class="form-control" id="select" name="machineType">
+                                    <option value="Any">Machine Type: Any</option>
+                                    <option value="Forlift Trucks">Forklift Trucks</option>
+                                    <option value="Reach Trucks">Reach Trucks</option>
+                                    <option value="Power Pallet Trunks">Power Pallet Trunks</option>
+                                    <option value="Hand Pallet Trucks">Hand Pallet Trucks</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-lg-12 col-lg-offset-2">
+                            <div class="col-lg-12">
+                                <select class="form-control" id="select" name="transmissionType">
+                                    <option value="Any">Transmission: Any</option>
+                                    <option value="Battery">Battery</option>
+                                    <option value="Diesal">Diesal</option>
+                                    <option value="Petrol">Petrol</option>
+                                    <option value="LPG">LPG</option>
+                                </select>
+                            </div>
+                        </div> <div class="form-group">
+                            <div class="col-lg-12">
+                                <select class="form-control" id="select" name="capacity">
+                                    <option value="Any">Capacity (KG): Any</option>
+                                    <option value="1500KG - 2000KG">1500KG - 2000KG</option>
+                                    <option value="2500KG - 3000KG">2500KG - 3000KG</option>
+                                    <option value="3500KG - 4000KG">3500KG - 4000KG</option>
+                                    <option value="4500kg - 5000KG">4500kg - 5000KG</option>
+                                    <option value="ABOVE 5000KG">ABOVE 5000KG</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <textarea class="form-control" rows="5" id="message" placeholder="Please leave your message to us here."></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-lg-12 txt_right">
                                 <button type="reset" class="btn btn-default">Cancel</button>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
@@ -74,10 +86,4 @@
     </div>
 
     <div class="clear_both"></div>
-</section>
-
-<section>
-
-
-    <div class="height_70"></div>
 </section>
