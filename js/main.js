@@ -44,7 +44,17 @@
     app.directive('contactus', function(){
         return {
             retrict: 'E',
-            templateUrl: '/content/contactus.html'
+            templateUrl: '/content/contactus.html',
+            controller: function($scope){
+                $scope.form = {
+                    machineType: 'Any',
+                    transmissionType: 'Any',
+                    capacity: 'Any'
+                };
+                
+                
+            },
+            controllerAs: 'contactUs' 
         }
     });
 })();

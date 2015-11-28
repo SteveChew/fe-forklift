@@ -2,33 +2,54 @@
     <div class="height_70"></div>
     <div class="m_container">
         <div class="grid_50">
+            <legend>Find us</legend>
+            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="100%" height="300" src="https://maps.google.com/maps?hl=en&q=No. 19, Jalan PJU 1A/18, Taman Perindustrian Jaya&ie=UTF8&t=roadmap&z=14&iwloc=B&output=embed">
+                <div><small><a href="http://embedgooglemaps.com">embedgooglemaps.com</a></small></div>
+                <div><small><a href="http://buyproxies.io/">buyproxies.io</a></small></div>
+            </iframe>
+        </div>
+        
+        <div class="grid_50">
             <div class="well bs-component">
-                <form class="form-horizontal">
+                <form class="form-horizontal" name="contactUsForm" ng-submit="contactUsForm.$valid" novalidate>
                     <fieldset>
                         <legend>Please send us a message</legend>
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <input type="text" class="form-control" id="custCompanyName" placeholder="Your Company Name">
+                                <div ng-show="contactUsForm.$submitted">
+                                    <label ng-show="contactUsForm.custCompanyName.$error.required" class="control-label error" for="custCompanyName">Please fill in your company name</label>
+                                </div>
+                                <input type="text" ng-model="form.custCompanyName" class="form-control" name="custCompanyName" placeholder="Your Company Name" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <input type="text" class="form-control" id="custName" placeholder="Your Name">
+                                <div ng-show="contactUsForm.$submitted">
+                                    <label ng-show="contactUsForm.custName.$error.required" class="control-label error" for="custCompanyName">Please fill in your name</label>
+                                </div>
+                                <input type="text" ng-model="form.custName" class="form-control" name="custName" placeholder="Your Name" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <input type="text" class="form-control" id="custContactNumber" placeholder="Your Contact Number">
+                                <div ng-show="contactUsForm.$submitted">
+                                    <label ng-show="contactUsForm.custContactNumber.$error.required" class="control-label error" for="custCompanyName">Please fill in your contact number</label>
+                                </div>
+                                <input type="text" ng-model="form.custContactNumber" class="form-control" name="custContactNumber" placeholder="Your Contact Number" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <input type="text" class="form-control" id="custEmail" placeholder="Your Email">
+                                <div ng-show="contactUsForm.$submitted">
+                                    <label ng-show="contactUsForm.custEmail.$error.required" class="control-label error" for="custCompanyName">Please fill in your email address</label>
+                                    <label ng-show="contactUsForm.custEmail.$invalid" class="control-label error" for="custCompanyName">Your email address seem like incorrect</label>
+                                </div>
+                                <input type="email" ng-model="form.custEmail" class="form-control" name="custEmail" placeholder="Your Email" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <select class="form-control" id="select" name="machineType">
+                                <select ng-model="form.machineType" class="form-control" id="select" name="machineType" required>
                                     <option value="Any">Machine Type: Any</option>
                                     <option value="Forlift Trucks">Forklift Trucks</option>
                                     <option value="Reach Trucks">Reach Trucks</option>
@@ -39,17 +60,17 @@
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <select class="form-control" id="select" name="transmissionType">
+                                <select ng-model="form.transmissionType" class="form-control" id="select" name="transmissionType" required>
                                     <option value="Any">Transmission: Any</option>
                                     <option value="Battery">Battery</option>
-                                    <option value="Diesal">Diesal</option>
+                                    <option value="Diesal">Diesel</option>
                                     <option value="Petrol">Petrol</option>
                                     <option value="LPG">LPG</option>
                                 </select>
                             </div>
                         </div> <div class="form-group">
                             <div class="col-lg-12">
-                                <select class="form-control" id="select" name="capacity">
+                                <select ng-model="form.capacity" class="form-control" id="select" name="capacity" required>
                                     <option value="Any">Capacity (KG): Any</option>
                                     <option value="1500KG - 2000KG">1500KG - 2000KG</option>
                                     <option value="2500KG - 3000KG">2500KG - 3000KG</option>
@@ -61,7 +82,10 @@
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <textarea class="form-control" rows="5" id="message" placeholder="Please leave your message to us here."></textarea>
+                                <div ng-show="contactUsForm.$submitted">
+                                    <label ng-show="contactUsForm.message.$error.required" class="control-label error" for="custCompanyName">Please fill in your contact number</label>
+                                </div>
+                                <textarea ng-model="form.message" class="form-control" rows="5" name="message" placeholder="Please leave your message to us here." required></textarea>
                             </div>
                         </div>
                         
@@ -75,13 +99,6 @@
                 </form>
                 <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
             </div>
-        </div>
-        <div class="grid_50">
-            <legend>Find us</legend>
-            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="100%" height="300" src="https://maps.google.com/maps?hl=en&q=No. 19, Jalan PJU 1A/18, Taman Perindustrian Jaya&ie=UTF8&t=roadmap&z=14&iwloc=B&output=embed">
-                <div><small><a href="http://embedgooglemaps.com">embedgooglemaps.com</a></small></div>
-                <div><small><a href="http://buyproxies.io/">buyproxies.io</a></small></div>
-            </iframe>
         </div>
     </div>
 

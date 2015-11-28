@@ -75,3 +75,8 @@ footer .icon {width: 35px; height: 35px; vertical-align: top;}
 
 select.form-control {width: 40% !important;}
 textarea.form-control {height: auto !important;}
+
+.ng-invalid.ng-dirty {border-color: #d9534f;}
+.ng-valid.ng-dirty {border-color: #3fad46;}
+label.error {color: #d9534f;}
+.ng-submitted .ng-invalid-required {border-color: #d9534f;}
