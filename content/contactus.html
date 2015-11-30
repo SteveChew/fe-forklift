@@ -8,7 +8,7 @@
                 <div><small><a href="http://buyproxies.io/">buyproxies.io</a></small></div>
             </iframe>
         </div>
-        
+
         <div class="grid_50">
             <div class="well bs-component">
                 <form class="form-horizontal" name="contactUsForm" ng-submit="contactUsForm.$valid" novalidate>
@@ -19,7 +19,7 @@
                                 <div ng-show="contactUsForm.$submitted">
                                     <label ng-show="contactUsForm.custCompanyName.$error.required" class="control-label error" for="custCompanyName">Please fill in your company name</label>
                                 </div>
-                                <input type="text" ng-model="form.custCompanyName" class="form-control" name="custCompanyName" placeholder="Your Company Name" required>
+                                <input type="text" ng-model="data.custCompanyName" class="form-control" name="custCompanyName" placeholder="Your Company Name" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -27,7 +27,7 @@
                                 <div ng-show="contactUsForm.$submitted">
                                     <label ng-show="contactUsForm.custName.$error.required" class="control-label error" for="custCompanyName">Please fill in your name</label>
                                 </div>
-                                <input type="text" ng-model="form.custName" class="form-control" name="custName" placeholder="Your Name" required>
+                                <input type="text" ng-model="data.custName" class="form-control" name="custName" placeholder="Your Name" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -35,7 +35,7 @@
                                 <div ng-show="contactUsForm.$submitted">
                                     <label ng-show="contactUsForm.custContactNumber.$error.required" class="control-label error" for="custCompanyName">Please fill in your contact number</label>
                                 </div>
-                                <input type="text" ng-model="form.custContactNumber" class="form-control" name="custContactNumber" placeholder="Your Contact Number" required>
+                                <input type="text" ng-model="data.custContactNumber" class="form-control" name="custContactNumber" placeholder="Your Contact Number" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -44,12 +44,12 @@
                                     <label ng-show="contactUsForm.custEmail.$error.required" class="control-label error" for="custCompanyName">Please fill in your email address</label>
                                     <label ng-show="contactUsForm.custEmail.$invalid" class="control-label error" for="custCompanyName">Your email address seem like incorrect</label>
                                 </div>
-                                <input type="email" ng-model="form.custEmail" class="form-control" name="custEmail" placeholder="Your Email" required>
+                                <input type="email" ng-model="data.custEmail" class="form-control" name="custEmail" placeholder="Your Email" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <select ng-model="form.machineType" class="form-control" id="select" name="machineType" required>
+                                <select ng-model="data.machineType" class="form-control" id="select" name="machineType" required>
                                     <option value="Any">Machine Type: Any</option>
                                     <option value="Forlift Trucks">Forklift Trucks</option>
                                     <option value="Reach Trucks">Reach Trucks</option>
@@ -60,7 +60,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <select ng-model="form.transmissionType" class="form-control" id="select" name="transmissionType" required>
+                                <select ng-model="data.transmissionType" class="form-control" id="select" name="transmissionType" required>
                                     <option value="Any">Transmission: Any</option>
                                     <option value="Battery">Battery</option>
                                     <option value="Diesal">Diesel</option>
@@ -70,7 +70,7 @@
                             </div>
                         </div> <div class="form-group">
                             <div class="col-lg-12">
-                                <select ng-model="form.capacity" class="form-control" id="select" name="capacity" required>
+                                <select ng-model="data.capacity" class="form-control" id="select" name="capacity" required>
                                     <option value="Any">Capacity (KG): Any</option>
                                     <option value="1500KG - 2000KG">1500KG - 2000KG</option>
                                     <option value="2500KG - 3000KG">2500KG - 3000KG</option>
@@ -85,13 +85,13 @@
                                 <div ng-show="contactUsForm.$submitted">
                                     <label ng-show="contactUsForm.message.$error.required" class="control-label error" for="custCompanyName">Please fill in your contact number</label>
                                 </div>
-                                <textarea ng-model="form.message" class="form-control" rows="5" name="message" placeholder="Please leave your message to us here." required></textarea>
+                                <textarea ng-model="data.message" class="form-control" rows="5" name="message" placeholder="Please leave your message to us here." required></textarea>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <div class="col-lg-12 txt_right">
-                                <button type="reset" class="btn btn-default">Cancel</button>
+                                <button type="button" ng-click="reset()" class="btn btn-default">Clear</button>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </div>

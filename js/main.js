@@ -43,18 +43,52 @@
     
     app.directive('contactus', function(){
         return {
+            scope: {},
+            bindToController: {
+                data: '@'
+            },
             retrict: 'E',
             templateUrl: '/content/contactus.html',
             controller: function($scope){
-                $scope.form = {
+                $scope.formDataDefault = {
                     machineType: 'Any',
                     transmissionType: 'Any',
-                    capacity: 'Any'
+                    capacity: 'Any',
+                    custEmail: ''
+                };
+                $scope.data = angular.copy($scope.formDataDefault);
+                
+                $scope.reset = function(){
+                    $scope.contactUsForm.$setPristine();
+                    $scope.data = angular.copy($scope.formDataDefault);
                 };
                 
-                
             },
-            controllerAs: 'contactUs' 
+            controllerAs: 'contactUs'
+        }
+    });
+    
+    app.directive('repair', function(){
+        return {
+            scope: {},
+            bindToController: {
+                data: '@'
+            },
+            retrict: 'E',
+            templateUrl: '/content/repair.html',
+            controller: function($scope){
+                $scope.formDataDefault = {
+                    custEmail: ''
+                };
+                $scope.data = angular.copy($scope.formDataDefault);
+                
+                $scope.reset = function(){
+                    $scope.repairForm.$setPristine();
+                    $scope.data = angular.copy($scope.formDataDefault);
+                };
+                  
+            },
+            controllerAs: 'repair' 
         }
     });
 })();
