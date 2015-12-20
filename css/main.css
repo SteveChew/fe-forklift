@@ -1,5 +1,5 @@
 header {min-height: 100px;}
-section {min-height: 50px;}
+section {min-height: 50px; padding-bottom: 10px;}
 footer {min-height: 50px; font-size: 14px; background-color: #6CD9E4;}
 body {font-size: 14px !important;}
 
@@ -26,6 +26,7 @@ body {font-size: 14px !important;}
 .grid_67 {width: 67%;}
 
 .height_120 {height: 120px;}
+.heigth_mcontent {height: 300px;}
 .height_70 {height: 70px;}
 .height_35 {height: 35px;}
 .height_30 {height: 30px;}
@@ -33,7 +34,7 @@ body {font-size: 14px !important;}
 .pad_40_20 {padding: 40px 20px;}
 
 .m_content {margin-left: 10%;}
-.m_content ul {padding: 15px 0px 20px 60px;}
+.m_content ul {padding: 15px 0px 10px 60px;}
 .m_content a.btn {margin-right: 30px;}
 
 .txt_left {text-align: left;}
@@ -57,12 +58,14 @@ img.resize-m-width {width: 150px; height: auto; margin-right: 25px;}
 img.resize-m-height {width: auto; height: 100px;  margin-right: 25px;}
 img.resize-m-auto {width: auto; height: auto;  margin-right: 25px;}
 img.width_250 {width: 250px; height: : auto; margin-left: 20px;}
+img.rightside {width: 270px; position: absolute; bottom: 0; margin-bottom: -10px;}
 
 #map {width: 500px; height: 400px;}
 
 #home_bg {background: url(/images/slider-bg.png)0 100% repeat-x;}
 
-section.mini-content {border: 1px solid #F4F4F4;}
+section.mini-content {border: 1px solid #F4F4F4; min-height: 0px;}
+section.mini-content .m_container {padding: 10px;}
 
 footer .m_container {text-align: center;}
 footer .box {display: inline-block; vertical-align: top; text-align: left; padding-right: 40px; padding-bottom: 15px;}

@@ -14,12 +14,21 @@
                 <form class="form-horizontal" name="contactUsForm" ng-submit="contactUsForm.$valid && submit()" novalidate>
                     <fieldset>
                         <legend>Please send us a message</legend>
+                        <div ng-show="isSubmitInProgress()" class="three-quarters-loader">
+                            Loading…
+                        </div>
+                        <div ng-show="isShowMsgSuccess()" class="alert alert-success" role="alert">
+                            <strong>Your request is submitted successful.</strong> We will get back to you shortly.
+                        </div>
+                        <div ng-show="isShowMsgFail()" class="alert alert-danger" role="alert">
+                            <strong>Sorry! We are having some technical issue.</strong> For your inquiry, please call us +6013 932 8820 or +6016 666 8820. Sorry for the inconvenient.
+                        </div>
                         <div class="form-group">
                             <div class="col-lg-12">
                                 <div ng-show="contactUsForm.$submitted">
                                     <label ng-show="contactUsForm.custCompanyName.$error.required" class="control-label error" for="custCompanyName">Please fill in your company name</label>
                                 </div>
-                                <input type="text" ng-model="data.custCompanyName" class="form-control" name="custCompanyName" placeholder="Your Company Name" required>
+                                <input type="text" ng-model="data.custCompanyName" ng-disabled="isSubmitHost()" class="form-control" name="custCompanyName" placeholder="Your Company Name" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -100,6 +109,7 @@
                 <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
             </div>
         </div>
+        
     </div>
 
     <div class="clear_both"></div>

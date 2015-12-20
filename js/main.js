@@ -50,11 +50,33 @@
             retrict: 'E',
             templateUrl: '/content/contactus.html',
             controller: function ($scope, $http) {
-                this.submitProceeding = false;
+                $scope.submitInProgress = false;
+                $scope.showMsgSuccess = false;
+                $scope.showMsgFail = false;
                 
-                this.isFormProceeding = function () {
-                    return submitProceeeding;
+                $scope.setShowMsgSuccess = function(isShow) {
+                    $scope.showMsgSuccess = isShow;
                 }
+                
+                $scope.isShowMsgSuccess = function() {
+                    return $scope.showMsgSuccess;
+                }
+                
+                $scope.setShowMsgFail = function(isShow) {
+                    $scope.showMsgFail = isShow;
+                }
+                
+                $scope.isShowMsgFail = function() {
+                    return $scope.showMsgFail;
+                }
+                
+                $scope.setSubmitInProgress = function(isInProgress) {
+                    $scope.submitInProgress = isInProgress;
+                };
+                
+                $scope.isSubmitInProgress = function() {
+                    return $scope.submitInProgress;
+                };
                 
                 $scope.formDataDefault = {
                     machineType: 'Any',
@@ -64,14 +86,16 @@
                 };
                 $scope.data = angular.copy($scope.formDataDefault);
 
-                $scope.reset = function () {
+                $scope.reset = function() {
                     $scope.contactUsForm.$setPristine();
                     $scope.data = angular.copy($scope.formDataDefault);
+                    $scope.setSubmitInProgress(false);
+                    $scope.isShowMsgSuccess(false);
+                    $scope.showMsgFail(false);
                 };
 
-                $scope.submit = function () {
-                    alert("submitting....");
-                    $scope.submitProceeding = true;
+                $scope.submit = function() {
+                    $scope.setSubmitInProgress(true);
                     var req = {
                         method: 'POST',
                         url: 'http://localhost:8080/mail/send',
@@ -81,15 +105,21 @@
                         },
                         data: {
                             app_id: 'twsforklift',
+                            purpose: 'enquiry contact',
                             data: $scope.data
                         }
                     }
-                
+                    //
+                    // send host
                     $http(req).then(function successCallback(response) {
-                        
+                        $scope.setShowMsgSuccess(true);
+                        alert("success = " + JSON.stringify(response));
+                        $scope.setSubmitInProgress(false);
                         
                     }, function errorCallback(response) {
-                        
+                        $scope.setShowMsgFail(true);
+                        alert("failure = " + JSON.stringify(response));
+                        $scope.setSubmitInProgress(false);
                     });
                 };
 
