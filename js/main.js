@@ -90,12 +90,18 @@
                     $scope.contactUsForm.$setPristine();
                     $scope.data = angular.copy($scope.formDataDefault);
                     $scope.setSubmitInProgress(false);
-                    $scope.isShowMsgSuccess(false);
-                    $scope.showMsgFail(false);
+                    $scope.resetState();
                 };
+                
+                $scope.resetState = function() {
+                    $scope.setShowMsgSuccess(false);
+                    $scope.setShowMsgFail(false);
+                }
 
                 $scope.submit = function() {
                     $scope.setSubmitInProgress(true);
+                    $scope.resetState();
+                    
                     var req = {
                         method: 'POST',
                         url: 'http://localhost:8080/mail/send',
@@ -112,14 +118,17 @@
                     //
                     // send host
                     $http(req).then(function successCallback(response) {
-                        $scope.setShowMsgSuccess(true);
-                        alert("success = " + JSON.stringify(response));
                         $scope.setSubmitInProgress(false);
-                        
+                        //
+                        // Check response satatus
+                        if ("200" == response.status) {
+                            $scope.setShowMsgSuccess(true);
+                        } else {
+                            $scope.setShowMsgFail(true);
+                        }
                     }, function errorCallback(response) {
-                        $scope.setShowMsgFail(true);
-                        alert("failure = " + JSON.stringify(response));
                         $scope.setSubmitInProgress(false);
+                        $scope.setShowMsgFail(true);
                     });
                 };
 
@@ -136,15 +145,84 @@
             },
             retrict: 'E',
             templateUrl: '/content/repair.html',
-            controller: function ($scope) {
+           controller: function ($scope, $http) {
+                $scope.submitInProgress = false;
+                $scope.showMsgSuccess = false;
+                $scope.showMsgFail = false;
+                
+                $scope.setShowMsgSuccess = function(isShow) {
+                    $scope.showMsgSuccess = isShow;
+                }
+                
+                $scope.isShowMsgSuccess = function() {
+                    return $scope.showMsgSuccess;
+                }
+                
+                $scope.setShowMsgFail = function(isShow) {
+                    $scope.showMsgFail = isShow;
+                }
+                
+                $scope.isShowMsgFail = function() {
+                    return $scope.showMsgFail;
+                }
+                
+                $scope.setSubmitInProgress = function(isInProgress) {
+                    $scope.submitInProgress = isInProgress;
+                };
+                
+                $scope.isSubmitInProgress = function() {
+                    return $scope.submitInProgress;
+                };
+                
                 $scope.formDataDefault = {
                     custEmail: ''
                 };
                 $scope.data = angular.copy($scope.formDataDefault);
 
-                $scope.reset = function () {
-                    $scope.repairForm.$setPristine();
+                $scope.reset = function() {
+                    $scope.contactUsForm.$setPristine();
                     $scope.data = angular.copy($scope.formDataDefault);
+                    $scope.setSubmitInProgress(false);
+                    $scope.resetState();
+                };
+                
+                $scope.resetState = function() {
+                    $scope.setShowMsgSuccess(false);
+                    $scope.setShowMsgFail(false);
+                }
+
+                $scope.submit = function() {
+                    $scope.setSubmitInProgress(true);
+                    $scope.resetState();
+                    
+                    var req = {
+                        method: 'POST',
+                        url: 'http://localhost:8080/mail/send',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Application': 'application/json'
+                        },
+                        data: {
+                            app_id: 'twsforklift',
+                            purpose: 'repair service enquiry',
+                            data: $scope.data
+                        }
+                    }
+                    //
+                    // send host
+                    $http(req).then(function successCallback(response) {
+                        $scope.setSubmitInProgress(false);
+                        //
+                        // Check response satatus
+                        if ("200" == response.status) {
+                            $scope.setShowMsgSuccess(true);
+                        } else {
+                            $scope.setShowMsgFail(true);
+                        }
+                    }, function errorCallback(response) {
+                        $scope.setSubmitInProgress(false);
+                        $scope.setShowMsgFail(true);
+                    });
                 };
 
             },
