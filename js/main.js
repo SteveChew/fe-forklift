@@ -79,10 +79,9 @@
                 };
                 
                 $scope.formDataDefault = {
-                    machineType: 'Any',
-                    transmissionType: 'Any',
-                    capacity: 'Any',
-                    custEmail: ''
+                    machine_type: 'Any',
+                    transmission_type: 'Any',
+                    capacity: 'Any'
                 };
                 $scope.data = angular.copy($scope.formDataDefault);
 
@@ -174,9 +173,7 @@
                     return $scope.submitInProgress;
                 };
                 
-                $scope.formDataDefault = {
-                    custEmail: ''
-                };
+                $scope.formDataDefault = {};
                 $scope.data = angular.copy($scope.formDataDefault);
 
                 $scope.reset = function() {
