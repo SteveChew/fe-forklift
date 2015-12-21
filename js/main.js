@@ -180,7 +180,7 @@
                 $scope.data = angular.copy($scope.formDataDefault);
 
                 $scope.reset = function() {
-                    $scope.contactUsForm.$setPristine();
+                    $scope.repairForm.$setPristine();
                     $scope.data = angular.copy($scope.formDataDefault);
                     $scope.setSubmitInProgress(false);
                     $scope.resetState();

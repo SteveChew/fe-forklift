@@ -28,7 +28,7 @@
                                 <div ng-show="repairForm.$submitted">
                                     <label ng-show="repairForm.custCompanyName.$error.required" class="control-label error" for="custCompanyName">Please fill in your company name</label>
                                 </div>
-                                <input type="text" ng-model="data.custCompanyName" class="form-control" name="custCompanyName" placeholder="Your Company Name" required>
+                                <input type="text" ng-model="data.custCompanyName" ng-disabled="isSubmitInProgress()" class="form-control" name="custCompanyName" placeholder="Your Company Name" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -36,7 +36,7 @@
                                 <div ng-show="repairForm.$submitted">
                                     <label ng-show="repairForm.custName.$error.required" class="control-label error" for="custCompanyName">Please fill in your name</label>
                                 </div>
-                                <input type="text" ng-model="data.custName" class="form-control" name="custName" placeholder="Your Name" required>
+                                <input type="text" ng-model="data.custName" ng-disabled="isSubmitInProgress()" class="form-control" name="custName" placeholder="Your Name" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -44,7 +44,7 @@
                                 <div ng-show="repairForm.$submitted">
                                     <label ng-show="repairForm.custContactNumber.$error.required" class="control-label error" for="custCompanyName">Please fill in your contact number</label>
                                 </div>
-                                <input type="text" ng-model="data.custContactNumber" class="form-control" name="custContactNumber" placeholder="Your Contact Number" required>
+                                <input type="text" ng-model="data.custContactNumber" ng-disabled="isSubmitInProgress()" class="form-control" name="custContactNumber" placeholder="Your Contact Number" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -53,7 +53,7 @@
                                     <label ng-show="repairForm.custEmail.$error.required" class="control-label error" for="custCompanyName">Please fill in your email address</label>
                                     <label ng-show="repairForm.custEmail.$invalid" class="control-label error" for="custCompanyName">Your email address seem like incorrect</label>
                                 </div>
-                                <input type="email" ng-model="data.custEmail" class="form-control" name="custEmail" placeholder="Your Email" required>
+                                <input type="email" ng-model="data.custEmail" ng-disabled="isSubmitInProgress()" class="form-control" name="custEmail" placeholder="Your Email" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -61,14 +61,14 @@
                                 <div ng-show="repairForm.$submitted">
                                     <label ng-show="repairForm.message.$error.required" class="control-label error" for="custCompanyName">Please fill in a message</label>
                                 </div>
-                                <textarea ng-model="data.message" class="form-control" rows="5" name="message" placeholder="Please leave your message to us here." required></textarea>
+                                <textarea ng-model="data.message" ng-disabled="isSubmitInProgress()" class="form-control" rows="5" name="message" placeholder="Please leave your message to us here." required></textarea>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <div class="col-lg-12 txt_right">
-                                <button type="button" ng-click="reset()" class="btn btn-default">Clear</button>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="button" ng-click="reset()" ng-disabled="isSubmitInProgress()" class="btn btn-default">Clear</button>
+                                <button type="submit" ng-disabled="isSubmitInProgress()" class="btn btn-primary">Submit</button>
                             </div>
                         </div>
                     </fieldset>
